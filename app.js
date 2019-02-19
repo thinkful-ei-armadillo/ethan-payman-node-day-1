@@ -32,15 +32,43 @@ app.get('/cipher', (req, res) => {
   res.send('Ciphered Text: ' + newString);
 });
 
+app.get('/lotto', (req, res) => {
+
+  const numbers = req.query.numbers.map((n) => { return Number.parseInt(n, 10); });
+
+  if (numbers.length !== 6) {
+    return res.status(400).send('You must provide 6 numbers');
+  }
+
+  let randomNumbers = [];
+  for (let i = 0; i < 6; i++) {
+    randomNumbers[i] = Math.floor(Math.random() * 20) + 1;
+  }
+
+  const matches = numbers.filter((n) => {
+    return randomNumbers.includes(n);
+  });
+
+  console.log(numbers, randomNumbers, matches);
+
+  if (matches.length < 4) {
+    return res.send('Sorry, you lose');
+  }
+
+  if (matches.length === 4) {
+    return res.send('Congratulations, you win a free ticket');
+  }
+
+  if (matches.length === 5) {
+    return res.send('Congratulations! You win $100!');
+  }
+
+  if (matches.length === 6) {
+    return res.send('Wow! Unbelievable! You could have won the mega millions!');
+  }
+
+});
+
 app.listen(8000, () => {
   console.log('Express listening on port 8000');
 });
-
-/*if (char === 90 || char === 122) {
-        console.log('hi');
-        const shiftNum = char - (24 + shift);
-        newString += String.fromCharCode(shiftNum);
-      } else {
-        const shiftNum = char + shift;
-        newString += String.fromCharCode(char + shift);
-      }*/
