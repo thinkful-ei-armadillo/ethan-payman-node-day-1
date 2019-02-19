@@ -4,6 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
+    "start": "node app.js",
+    "dev": "nodemon app.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -15,5 +17,12 @@
   "bugs": {
     "url": "https://github.com/thinkful-ei-armadillo/ethan-payman-node-day-1/issues"
   },
-  "homepage": "https://github.com/thinkful-ei-armadillo/ethan-payman-node-day-1#readme"
+  "homepage": "https://github.com/thinkful-ei-armadillo/ethan-payman-node-day-1#readme",
+  "dependencies": {
+    "express": "^4.16.4",
+    "morgan": "^1.9.1"
+  },
+  "devDependencies": {
+    "nodemon": "^1.18.10"
+  }
 }
