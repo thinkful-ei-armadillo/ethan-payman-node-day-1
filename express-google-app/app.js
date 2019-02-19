@@ -20,17 +20,24 @@ app.get('/apps', (req, res) => {
 
   if (genres) {
     if (
-      !['Action', 'Puzzle', 'Stratergy', 'Casual', 'Arcade', 'Card'].includes(
-        genres
+      !['action', 'puzzle', 'strategy', 'casual', 'arcade', 'card'].includes(
+        genres.toLowerCase()
       )
     ) {
       return res
         .status(400)
         .send(
-          'Genres must be one of action, puzzle, stratergy, casual, arcade, or card'
+          'Genres must be one of action, puzzle, strategy, casual, arcade, or card'
         );
     }
   }
+
+  if (genres) {
+    results = results.filter((r) => {
+      return r.Genres.toUpperCase() === genres.toUpperCase();
+    });
+  }
+
 
   if (sort) {
     results.sort((a, b) => {
