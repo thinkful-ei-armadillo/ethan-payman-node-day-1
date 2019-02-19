@@ -1,0 +1,19 @@
+{
+  "name": "ethan-payman-node-day-1",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/thinkful-ei-armadillo/ethan-payman-node-day-1.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/thinkful-ei-armadillo/ethan-payman-node-day-1/issues"
+  },
+  "homepage": "https://github.com/thinkful-ei-armadillo/ethan-payman-node-day-1#readme"
+}
